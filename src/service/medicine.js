@@ -7,7 +7,7 @@ export default class MedicineService {
     const accessKey = process.env.MEDICINE_INFO_ACCESS_KEY;
     const apiEndPoint = "http://apis.data.go.kr/1471000/DrbEasyDrugInfoService/getDrbEasyDrugList";
     try {
-      const fetchDataRow = await fetch(`${apiEndPoint}?$serviceKey=${accessKey}`).catch((err) => console.log(err));
+      const fetchDataRow = await fetch(`${apiEndPoint}?serviceKey=${accessKey}`).catch((err) => console.log(err));
 
       if (fetchDataRow.status !== 200) return undefined;
       const fetchData = await fetchDataRow.text();
