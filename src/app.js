@@ -4,7 +4,8 @@ import cors from "cors";
 import morgan from "morgan";
 import MedicineRoute from "./route/medicine.js";
 
-import path from "path";
+import { fileURLToPath } from 'url';
+import path from 'path';
 
 dotenv.config();
 
@@ -13,6 +14,9 @@ const port = 8080;
 
 app.use(cors());
 app.use(morgan("dev"));
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use(express.static(path.join(__dirname, '../build')));
 
