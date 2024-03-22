@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import morgan from "morgan";
-import MedicineRoute from "./route/medicine.js";
+import MedicineRoute from "./route/medicineController.js";
 import path from "path";
 import { fileURLToPath } from "url";
 dotenv.config();
